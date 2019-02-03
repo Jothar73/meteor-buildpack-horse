@@ -228,6 +228,11 @@ fi
 # Now on to bundling. Don't put the bundle in $APP_CHECKOUT_DIR during
 # bundling, or it will recurse, trying to bundle up its own bundling.
 
+echo "---> update meteor candy"
+METEOR update meteor-candy-blaze
+METEOR update meteor-candy-admin
+METEOR update meteor-candy-config
+
 echo "-----> Building Meteor app with ROOT_URL: $ROOT_URL"
 BUNDLE_DEST=`mktemp -d "$BUILDPACK_DIR/build-XXXX"`
 # The actual invocation of `meteor build`!
